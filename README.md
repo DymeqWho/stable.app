@@ -54,6 +54,14 @@ Hämta en häst:
 
 Uppdatera en häst:
 ``PUT /api/horses/update/{name}``
+```
+{name} -> Flash
+```
+```
+{
+    "description": "updated horse description"
+}
+```
 
 Ta bort en häst:
 ``DELETE /api/horses/{name}``
@@ -78,6 +86,17 @@ Hämta en ryttare:
 Uppdatera en ryttare:
 ``PUT /api/riders/update/{name}``
 
+```
+ {name}-> John Doe
+```
+```
+ {
+    "description": "updated rider description"
+}
+
+
+```
+
 Ta bort en ryttare:
 ``DELETE /api/riders/{name}``
 
@@ -100,6 +119,16 @@ Hämta en instruktör:
 
 Uppdatera en instruktör:
 ``PUT /api/instructors/update/{name}``
+
+```
+{name} -> Master Of Disaster
+```
+```
+{
+    "description": "updated instructor description"
+}
+
+```
 
 Ta bort en instruktör:
 ``DELETE /api/instructors/{name}``
@@ -128,6 +157,22 @@ Hämta ett par:
 
 Uppdatera ett par:
 ``PUT /api/pairs/update/{id}``
+
+```
+{id} -> (numberInDatabase:) 1
+```
+```
+
+{
+    "description": "updated pair description",
+    "rider": {
+        "name": "John Doe"
+    },
+    "horse": {
+        "name": "Flash"
+    }
+}
+```
 
 Ta bort ett par:
 ``DELETE /api/pairs/{id}``
@@ -159,6 +204,24 @@ Hämta en grupp:
 
 Uppdatera en grupp:
 ``PUT /api/groups/update/{name}``
+
+```
+{name} -> Testers
+```
+```
+
+{
+    "description": "updated group description",
+    "instructor": {
+        "name": "Master Of Disaster"
+    },
+    "pairs": [
+        {
+            "id": 1
+        }
+    ]
+}
+```
 
 Ta bort en grupp:
 ``DELETE /api/groups/{name}``
