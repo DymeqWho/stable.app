@@ -166,6 +166,16 @@ Ta bort en grupp:
 ## Licens
 Projektet licensieras under **MIT License**.
 
+## Författarens kommentar:
+Jag valde en MVCS-struktur för projektet eftersom applikationen endast ska kopplas till en MySQL-databas och hantera enbart CRUD-förfrågningar.
+
+Entiteterna skapas via särskilda byggare (builders), eftersom de inte är särskilt komplexa och skapande av separata DTO
+hade känts överflödigt, särskilt eftersom det ännu inte är klart vilka slutliga data en potentiell kund skulle vilja ha. Samtidigt arbetar jag med OneToMany-relationer (instruktör-grupper) och ManyToMany-relationer (grupper-par) istället för enbart OneToOne.
+
+Jag skapade specifika byggare för entiteterna för att selektivt kunna filtrera data i svaren; det är inte alltid nödvändigt att visa alla tabeller kopplade till en instruktör, särskilt om endast en specifik grupp är av intresse. Byggarna gör det också möjligt att markera att ett fält finns tillgängligt i JSON-format och kan inkluderas senare vid behov.
+
+Applikationen kan enkelt utökas genom att lägga till fler fält till entiteterna (till exempel om en häst eller ryttare är sjuk eller deras färdighetsnivå), vid behov. Detta blir lätt att implementera tack vare den tydliga kodstrukturen, som tydligt skiljer affärslogik från kontrollern samt de specifika byggare som används för varje objekt.
+
 ## Kontakt
 Vid frågor eller förslag, vänligen kontakta mig i ett privat meddelande.
 
