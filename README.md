@@ -27,9 +27,15 @@ Innan du börjar använda applikationen måste du konfigurera databasen. Gör f�
    spring.jpa.hibernate.ddl-auto=update
    
 ## Installation
-För att installera applikationen, kör följande kommando:
+### Installation
 
-``mvn clean install``
+1. Se till att du har konfigurerat MySQL-databasen enligt beskrivningen i `application.properties`.
+2. Installera alla beroenden och bygg projektet med följande kommando:
+
+   ```bash
+   mvn clean install
+3. Starta applikationen genom att köra huvudklassen Application.
+   Om databaskopplingen är korrekt, kommer tabellerna att skapas automatiskt i databasen.
 
 ## Testa applikationen
 Applikationen kan testas med Postman på en dedikerad port. Nedan finns exempel på endpoints för att hantera hästar:
